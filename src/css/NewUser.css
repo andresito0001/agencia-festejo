@@ -1,0 +1,26 @@
+.root {
+    -fx-background-color: #2B3137;
+}
+
+.label {
+    -fx-font-size: 12;
+    -fx-font-family: "Lucida Console";
+    -fx-text-fill: "while";
+    -fx-text-fill: #ffffff;
+}
+
+#tittleLabel {
+    -fx-font-size: 16;
+}
+
+.text-field {
+    -fx-prompt-text-fill: #fafbfc;
+    -fx-control-inner-background: #24292e;
+}
+
+#registerButtom {
+    -fx-font-size: 16;
+    -fx-background-color: #2dba4e;
+    -fx-text-fill: #24292e;
+    -fx-background-radius: 15px;
+}
