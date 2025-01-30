@@ -1,0 +1,10 @@
+#vBoxLeft {
+    -fx-background-color: #abc48f;
+}
+
+.leftButtomns {
+    -fx-background-color: #abc48f;
+    -fx-border-radius: 10;
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+}

@@ -8,15 +8,15 @@
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "Main"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "Main",
+            "mainClass": "main.java.Main",
             "projectName": "agencia-festejo_f8e2c1a3",
-            "vmArgs": "--module-path \"lib/javafx-sdk-21.0.5/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"lib/javafx-sdk-23.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
