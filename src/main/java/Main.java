@@ -1,11 +1,17 @@
 package main.java;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import main.java.controllers.DashBoardController;
 import main.java.controllers.LoginController;
+import main.java.dao.EventDAO;
+import main.java.util.ConnectionPool;
+import main.java.util.DBConstants;
 import main.java.util.SceneSwitcher;
+import main.java.util.Table;
 
 public class Main extends Application {
     private static Stage primaryStage;
@@ -26,5 +32,6 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
         launch(args);
+
     }
 }

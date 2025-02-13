@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ComboBox fx:id="serachTypeCombobox" layoutX="31.0" layoutY="51.0" prefHeight="33.0" prefWidth="160.0" promptText="Buscar por:" />
+      <TextField fx:id="searchBar" layoutX="220.0" layoutY="51.0" prefHeight="33.0" prefWidth="303.0" promptText="Buscar Cliente" />
+      <Button fx:id="searchButtom" layoutX="565.0" layoutY="51.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="83.0" text="Buscar">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="26.0">
+               <image>
+                  <Image url="@../img/search-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="clientsTableview" layoutY="117.0" prefHeight="475.0" prefWidth="738.0">
+        <columns>
+          <TableColumn fx:id="dniColum" prefWidth="75.0" text="cedula" />
+          <TableColumn fx:id="nameColumn" prefWidth="100.6666488647461" text="nombre" />
+            <TableColumn fx:id="lnameColumn" prefWidth="134.00001525878906" text="apellido" />
+            <TableColumn fx:id="locationColumn" prefWidth="128.6666259765625" text="direccion" />
+            <TableColumn fx:id="phoneNumberColumn" prefWidth="125.99996948242188" text="telefono" />
+            <TableColumn fx:id="emailColumn" prefWidth="174.0" text="correo_electronico" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,7 +1,11 @@
 package main.java.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import main.java.entities.Client;
 
 public class ClientDAO {
@@ -24,6 +28,26 @@ public class ClientDAO {
             st.close();
         }
     }
+
+    public List<Client> getClientsBy(final String condition) throws SQLException {
+        final String query = "select * from clientes " + condition;
+        List<Client> clients = new ArrayList<>();
+
+        try (final PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery()) {
+            
+            while (rs.next()) {
+                clients.add(new Client(rs.getString("cedula"),
+                rs.getString("nombre"), rs.getString("apellido"),
+                rs.getString("direccion"), rs.getString("telefono"),
+                rs.getString("correo_electronico")));
+            }
+        }
+        
+        return clients;
+    }
+
+
 
     private final Connection conn;
 }

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox fx:id="vBoxLeft" alignment="TOP_CENTER" prefHeight="585.0" prefWidth="208.0" spacing="25.0" stylesheets="@../css/dashboard.css">
@@ -21,6 +20,11 @@
                   <Insets top="25.0" />
                </VBox.margin>
             </ImageView>
+            <Button mnemonicParsing="false" onMouseClicked="#cargarnuevoUsuario" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Nuevo Usuario">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
             <Button mnemonicParsing="false" onMouseClicked="#cargarRegistrarCliente" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Registrar Cliente">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -31,7 +35,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Consultar Clientes">
+            <Button mnemonicParsing="false" onMouseClicked="#loadClientReport" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Consultar Clientes">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -41,12 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Consultas Eventos">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Consultar Proveedores">
+            <Button mnemonicParsing="false" onMouseClicked="#cargarConsutarEventos" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Consultar Eventos">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

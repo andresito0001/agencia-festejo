@@ -1,0 +1,9 @@
+.conflict-row {
+    -fx-background-color: #ffb3b3;  /* Rojo claro */
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.conflict-row:selected {
+    -fx-background-color: #ff6666;  /* Rojo más intenso cuando está seleccionado */
+}

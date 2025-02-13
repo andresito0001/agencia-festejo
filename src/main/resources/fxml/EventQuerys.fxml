@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <DatePicker fx:id="firstDate" layoutX="79.0" layoutY="74.0" prefHeight="21.0" prefWidth="193.0" promptText="dd/mm/aaaa" />
+      <DatePicker fx:id="secondDate" layoutX="333.0" layoutY="74.0" prefHeight="25.0" prefWidth="193.0" promptText="dd/mm/aaaa" />
+      <Label layoutX="79.0" layoutY="57.0" text="Fecha inicio" />
+      <Label layoutX="333.0" layoutY="57.0" text="Fecha fin" />
+      <Button fx:id="searchButtom" layoutX="591.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Buscar" />
+      <TableView fx:id="eventTable" layoutY="143.0" prefHeight="441.0" prefWidth="738.0">
+         <columns>
+            <TableColumn fx:id="idEvent" prefWidth="53.33334219455719" text="id" />
+            <TableColumn fx:id="eventName" prefWidth="135.33330917358398" text="nombre" />
+            <TableColumn fx:id="eventDate" prefWidth="62.000030517578125" text="fecha" />
+            <TableColumn fx:id="eventTime" prefWidth="70.66664123535156" text="hora" />
+            <TableColumn fx:id="eventLocation" prefWidth="228.66659545898438" text="lugar" />
+            <TableColumn fx:id="clientDni" prefWidth="104.0" text="cedula_cliente" />
+            <TableColumn fx:id="idService" prefWidth="77.3333740234375" text="id_servicio" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

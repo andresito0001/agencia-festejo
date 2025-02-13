@@ -28,6 +28,34 @@ public class DashBoardController {
         System.out.println("cargar nuevo empleado...");
     }
 
+    public void cargarConsutarEventos(MouseEvent event) {
+        try {
+            centerPaneId.getStylesheets().add(getClass().getResource("/main/resources/css/EventQuerys.css").toExternalForm());
+            SceneSwitcher.switchPane(centerPaneId, "/main/resources/fxml/EventQuerys.fxml", "/main/resources/css/EventQuerys.css", new EventQuerysController());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("cargar consultar eventos...");
+    }
+
+    public void loadClientReport(MouseEvent event) {
+        try {
+            SceneSwitcher.switchPane(centerPaneId, "/main/resources/fxml/ClientsReport.fxml", "/main/resources/css/ClientsReport.css", new ClientsReportController());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cargarnuevoUsuario(MouseEvent event) {
+        try {
+            SceneSwitcher.switchPane(centerPaneId, "/main/resources/fxml/NuevoUsuario.fxml", "/main/resources/css/NuevoUsuario.css", new NuevoUsuarioController());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     private AnchorPane centerPaneId;
 }
