@@ -20,30 +20,53 @@ public class ClientsReportController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         serachTypeCombobox.getItems().setAll("Todo", "Nombre", "Apellido", "Cedula", "Telefono", "Correo");
-
         searchButtom.setOnAction(_ -> {
-            if (searchBar == null || searchBar.getText().isEmpty() || serachTypeCombobox == null || serachTypeCombobox.getSelectionModel().isEmpty()) throw new IllegalArgumentException("Search bar cannot be null");
-
+            if (searchBar == null || searchBar.getText().isEmpty() || serachTypeCombobox == null || serachTypeCombobox.getSelectionModel().isEmpty()) {
+                throw new IllegalArgumentException("Search bar cannot be null");
+            }
+    
             final String selectItemsearchType = serachTypeCombobox.getValue();
-            final  String searchBarInput = searchBar.getText();
-
+            final String searchBarInput = searchBar.getText();
+    
             try {
-                // clientsList.addAll(new ClientDAO(ConnectionPool.getConnection()).getClientsBy("where " + selectItemsearchType.toLowerCase() + " = " + "'" + searchBarInput + "'"));
-                ObservableList<Client> clients = FXCollections.observableArrayList(new ClientDAO(ConnectionPool.getConnection()).getClientsBy("where " + selectItemsearchType.toLowerCase() + " = " + "'" + searchBarInput + "'"));
-
-                dniColum.setCellValueFactory(new PropertyValueFactory<Client, String>("ci"));
-                nameColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("name"));
-                lnameColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("lastName"));
-                locationColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("direction"));
-                phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("phoneNumber"));
-                emailColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("mail"));
-                
+                String queryCondition;
+                switch (selectItemsearchType) {
+                    case "Nombre":
+                        queryCondition = "WHERE nombre LIKE '%" + searchBarInput + "%'";
+                        break;
+                    case "Apellido":
+                        queryCondition = "WHERE apellido LIKE '%" + searchBarInput + "%'";
+                        break;
+                    case "Cedula":
+                        queryCondition = "WHERE cedula = '" + searchBarInput + "'";
+                        break;
+                    case "Telefono":
+                        queryCondition = "WHERE telefono = '" + searchBarInput + "'";
+                        break;
+                    case "Correo":
+                        queryCondition = "WHERE correo_electronico LIKE '%" + searchBarInput + "%'";
+                        break;
+                    case "Todo":
+                    default:
+                        queryCondition = ""; // Si selecciona "Todo", no aplica filtro
+                        break;
+                }
+                ObservableList<Client> clients = FXCollections.observableArrayList(
+                    new ClientDAO(ConnectionPool.getConnection()).getClientsBy(queryCondition)
+                );
+                dniColum.setCellValueFactory(new PropertyValueFactory<>("ci"));
+                nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+                lnameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+                locationColumn.setCellValueFactory(new PropertyValueFactory<>("direction"));
+                phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+                emailColumn.setCellValueFactory(new PropertyValueFactory<>("mail"));
                 clientsTableview.setItems(clients);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
     }
+    
 
     @FXML
     private Button searchButtom;
