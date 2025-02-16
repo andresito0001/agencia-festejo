@@ -1,12 +1,13 @@
 package main.java.dao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import main.java.entities.Client;
+import main.java.entities.TopClient;
 
 public class ClientDAO {
     public ClientDAO(final Connection conn) {
@@ -47,7 +48,46 @@ public class ClientDAO {
         return clients;
     }
 
+    public TopClient instanceTopClient(final String key, final Integer score) throws SQLException {
+        final String sql  = "select * from clientes where cedula = " + "'" + key  + "'";
+       
+        try (final PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs = st.executeQuery()) {
+                if (rs.next()) {
+                    return new TopClient(rs.getString("cedula"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        score
+                    );
+                }
+        }
 
+        return null;
+    }
+
+
+    public List<TopClient> getTopFiveClients() throws SQLException {
+        final String query = """
+            SELECT 
+                cliente,
+                COUNT(id_evento) AS total_eventos
+            FROM eventos
+            GROUP BY cliente
+            ORDER BY total_eventos DESC
+            LIMIT 5;
+        """;
+
+        List<TopClient> clients = new ArrayList<>();
+
+        try (PreparedStatement st = conn.prepareStatement(query); 
+        ResultSet rs = st.executeQuery()) {
+            while (rs.next()) {
+                clients.add(instanceTopClient(rs.getString("cliente"), Integer.parseInt(rs.getString("total_eventos"))));
+            }
+        }
+
+        return clients;
+    }
 
     private final Connection conn;
 }
