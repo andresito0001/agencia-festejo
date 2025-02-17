@@ -11,6 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -24,12 +25,17 @@
                   <Insets top="25.0" />
                </VBox.margin>
             </ImageView>
+            <Button mnemonicParsing="false" onMouseClicked="#cargarDashBoard" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Dasboard">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
             <Button mnemonicParsing="false" onMouseClicked="#cargarnuevoUsuario" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Nuevo Usuario">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Nuevo Evento">
+            <Button mnemonicParsing="false" onMouseClicked="#loadNewEvent" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Nuevo Evento">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -66,11 +72,6 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="738.0">
                      <children>
                         <Button fx:id="previusButton" layoutX="582.0" layoutY="8.0" mnemonicParsing="false" text="Previus" />
-                        <Label prefHeight="35.0" prefWidth="223.0" styleClass="dashboardtittelslabel" text="Top 5 Clientes mas frecuentes">
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </Label>
                         <TableView fx:id="topClientsTableview" layoutY="39.0" prefHeight="167.0" prefWidth="738.0">
                            <columns>
                               <TableColumn fx:id="ci" prefWidth="132.6666921377182" text="Cedula " />
@@ -79,11 +80,6 @@
                               <TableColumn fx:id="score" prefWidth="124.6666259765625" text="Score" />
                            </columns>
                         </TableView>
-                        <Label layoutY="226.0" prefHeight="35.0" prefWidth="223.0" styleClass="dashboardtittelslabel" text="Servicio mas popular por mes">
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </Label>
                         <TableView fx:id="servicioPopularTableview" layoutY="270.0" prefHeight="302.0" prefWidth="738.0">
                           <columns>
                             <TableColumn fx:id="mes" prefWidth="75.0" text="Mes" />
@@ -92,6 +88,22 @@
                           </columns>
                         </TableView>
                         <Button fx:id="nextButtom" layoutX="662.0" layoutY="7.0" mnemonicParsing="false" text="Next" />
+                        <Label layoutY="3.0" prefHeight="35.0" prefWidth="295.0" styleClass="dashboardtittelslabel" text="Top 5 clientes mas frecuentes">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="227.0" prefHeight="35.0" prefWidth="295.0" styleClass="dashboardtittelslabel" text="Servicios mas populares por mes">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
               </content>

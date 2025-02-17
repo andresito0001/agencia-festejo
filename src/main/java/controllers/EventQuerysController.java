@@ -1,16 +1,13 @@
 package main.java.controllers;
 
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

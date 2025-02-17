@@ -3,7 +3,6 @@ package main.java.controllers;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +16,6 @@ import main.java.Main;
 import main.java.dao.EventDAO;
 import main.java.entities.AverageEventType;
 import main.java.entities.PopularService;
-import main.java.entities.TopClient;
 import main.java.util.ConnectionPool;
 import main.java.util.SceneSwitcher;
 

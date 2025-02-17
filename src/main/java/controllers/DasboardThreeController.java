@@ -13,11 +13,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import main.java.dao.ClientDAO;
 import main.java.dao.EventDAO;
-import main.java.entities.ContratacionPorMes;
 import main.java.entities.EventRank;
-import main.java.entities.TopClient;
 import main.java.util.ConnectionPool;
 import main.java.util.SceneSwitcher;
 

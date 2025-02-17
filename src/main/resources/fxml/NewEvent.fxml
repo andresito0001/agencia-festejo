@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="dateDatePicker" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="39.0" prefHeight="30.0" prefWidth="249.0" stylesheets="@../css/NewUser.css" text="Registrar Nuevo Evento" />
+      <TextField fx:id="descTextfield" layoutX="14.0" layoutY="118.0" promptText="Cumple pedro perez..." />
+      <Label layoutX="14.0" layoutY="101.0" text="Descripcion" />
+      <DatePicker fx:id="datePicker" layoutX="234.0" layoutY="118.0" promptText="dd/mm/yyy" />
+      <Label layoutX="232.0" layoutY="101.0" text="Fecha " />
+      <TextField fx:id="timeTextfield" layoutX="492.0" layoutY="118.0" promptText="HH;mm:ss.sss-4" />
+      <Label layoutX="492.0" layoutY="101.0" text="Hora" />
+      <TextField fx:id="locationTextfield" layoutX="14.0" layoutY="267.0" />
+      <Label layoutX="14.0" layoutY="249.0" text="Lugar" />
+      <TextField fx:id="ciTextfield" layoutX="234.0" layoutY="263.0" promptText="ej: 12345678" />
+      <Label layoutX="234.0" layoutY="245.0" text="Cedula cliente" />
+      <ComboBox fx:id="serviceCombobox" layoutX="492.0" layoutY="263.0" prefWidth="150.0" />
+      <Label layoutX="491.0" layoutY="245.0" text="Servicio" />
+      <Button fx:id="registerButton" layoutX="29.0" layoutY="422.0" mnemonicParsing="false" text="Registrar" />
+   </children>
+</AnchorPane>

@@ -12,7 +12,7 @@ import main.java.entities.ContratacionPorMes;
 import main.java.entities.Event;
 import main.java.entities.EventRank;
 import main.java.entities.PopularService;
-import main.java.util.ConnectionPool;
+import main.java.entities.Service;
 
 public class EventDAO {
     public EventDAO(final Connection connection) {
@@ -204,5 +204,20 @@ public class EventDAO {
         return resultados;
     }
     
+    public List<Service> getAvServices() throws SQLException {
+        final String sql = "select id_servicio, nombre from servicios";
+
+        List<Service> resultados = new ArrayList<>();
+
+        try (PreparedStatement pstmt = connection.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                resultados.add(new Service(rs.getString("id_servicio"), rs.getString("nombre")));
+            }
+        }
+
+        return resultados;
+    }
     private Connection connection;
 }

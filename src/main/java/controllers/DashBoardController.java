@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import main.java.Main;
 import main.java.dao.ClientDAO;
 import main.java.dao.EventDAO;
 import main.java.entities.ContratacionPorMes;
@@ -76,7 +77,6 @@ public class DashBoardController implements Initializable {
     public void cargarNuevoEmpleado(MouseEvent event) {
         try {
             SceneSwitcher.switchPane(centerPaneId, "/main/resources/fxml/RegistrarEmpleado.fxml", "/main/resources/css/RegistrarEmpleado.css", new RegistrarEmpleadoController());
-            dashBoardPage += 1;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -111,7 +111,22 @@ public class DashBoardController implements Initializable {
         }
     }
 
-    public static Integer dashBoardPage = 1;
+    public void loadNewEvent(MouseEvent event) {
+        try {
+            SceneSwitcher.switchPane(centerPaneId, "/main/resources/fxml/NewEvent.fxml", "/main/resources/css/NewEvent.css", new NewEventController());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cargarDashBoard(MouseEvent event) {
+        try {
+            Main.switchToDashboard();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     @FXML
     private AnchorPane centerPaneId;
     @FXML

@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 public class NuevoUsuarioController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        registerButtom.setOnAction (e -> {
+        registerButtom.setOnAction (_ -> {
             typeUserCombobox.getItems().setAll("admin", "invitado");
 
             

@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane fx:id="centerPaneId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -15,11 +16,6 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="738.0">
                <children>
-                  <Label prefHeight="35.0" prefWidth="223.0" styleClass="dashboardtittelslabel" text="Temporada Alta/Baja de eventos">
-                     <padding>
-                        <Insets left="15.0" />
-                     </padding>
-                  </Label>
                   <TableView fx:id="tempAltaBajaTableview" layoutY="42.0" prefHeight="402.0" prefWidth="738.0">
                     <columns>
                       <TableColumn fx:id="enevntType" prefWidth="167.33331310749054" text="Tipo evento " />
@@ -27,6 +23,14 @@
                         <TableColumn fx:id="lowSeason" prefWidth="253.99993896484375" text="Temporada mas baja" />
                     </columns>
                   </TableView>
+                  <Label layoutY="6.0" prefHeight="35.0" prefWidth="295.0" styleClass="dashboardtittelslabel" text="Temporada Alta/baja de eventos">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </content>

@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="centerPaneId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -16,10 +17,13 @@
                <children>
                   <Button fx:id="previusButton" layoutX="593.0" layoutY="7.0" mnemonicParsing="false" text="Previus" />
                   <Button fx:id="nextButtom" layoutX="662.0" layoutY="7.0" mnemonicParsing="false" text="Next" />
-                  <Label prefHeight="35.0" prefWidth="223.0" styleClass="dashboardtittelslabel" text="Top servicios mas populares">
+                  <Label layoutY="7.0" prefHeight="35.0" prefWidth="243.0" styleClass="dashboardtittelslabel" text="Top servicios mas populares">
                      <padding>
                         <Insets left="15.0" />
                      </padding>
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
                   </Label>
                   <TableView fx:id="popularServiceTableview" layoutX="-7.0" layoutY="49.0" prefHeight="195.0" prefWidth="738.0">
                     <columns>
@@ -28,11 +32,6 @@
                         <TableColumn fx:id="contrataciones" prefWidth="162.0" text="n contrataciones" />
                     </columns>
                   </TableView>
-                  <Label layoutY="257.0" prefHeight="35.0" prefWidth="223.0" styleClass="dashboardtittelslabel" text="Precio promedio por evento">
-                     <padding>
-                        <Insets left="15.0" />
-                     </padding>
-                  </Label>
                   <TableView fx:id="avgTableview" layoutY="292.0" prefHeight="279.0" prefWidth="738.0">
                     <columns>
                       <TableColumn fx:id="eventType" prefWidth="147.33331334590912" text="Tipo evento" />
@@ -41,6 +40,14 @@
                         <TableColumn fx:id="maxAvg" prefWidth="165.33340454101562" text="Precio maximo ($)" />
                     </columns>
                   </TableView>
+                  <Label layoutY="257.0" prefHeight="35.0" prefWidth="295.0" styleClass="dashboardtittelslabel" text="Precio promedio por evento">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </content>
