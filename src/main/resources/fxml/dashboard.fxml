@@ -25,7 +25,7 @@
                   <Insets top="25.0" />
                </VBox.margin>
             </ImageView>
-            <Button mnemonicParsing="false" onMouseClicked="#cargarDashBoard" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Dasboard">
+            <Button mnemonicParsing="false" onMouseClicked="#cargarDashBoard" prefHeight="35.0" prefWidth="233.0" styleClass="leftButtomns" text="Dashboard">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
